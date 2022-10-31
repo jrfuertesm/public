@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Master Report Generator</title>
+
+    <style>
+      img {float: right; display: block; max-width: 10%;}
+      div {border: 0px solid black;}
+    </style>
+
+    <script>
+      function create_report() {        
+        let first_text_area = document.getElementById("first_text_area").value
+        let first_input_field = document.getElementById("first_input_field").value
+        let first_radio_selection =document.querySelector('input[name="first_radio_selection"]:checked').value
+        let second_radio_selection =document.querySelector('input[name="second_radio_selection"]:checked').value
+
+        let first_pre_text = "...first predefined text"
+        let second_pre_text = "...second predefined text"
+
+        document.getElementById("first_text_area_b").innerHTML = first_text_area
+        document.getElementById("first_input_field_b").innerHTML = first_input_field
+        document.getElementById("first_radio_selection_b").innerHTML = first_radio_selection
+        document.getElementById("second_radio_selection_b").innerHTML = second_radio_selection
+       
+        if (document.getElementById('first_pre_text').checked) {
+            document.getElementById("first_pre_text_b").innerHTML = first_pre_text
+        }
+        if (document.getElementById("second_pre_text").checked) {
+            document.getElementById("second_pre_text_b").innerHTML = second_pre_text
+        }
+
+      }
+    </script>
+
+  </head>
+
+  <body>
+    <h1>Master Report Generator</h1>
+
+    <div id="div_in">
+      <h2>Information needed</h2>
+      <textarea rows="8" cols="28" name="first_text_area" id="first_text_area"></textarea>
+      <br>
+
+      <input type="text" name="first_input_field" id="first_input_field" placeholder="...first input text">
+      <br>
+
+      <fieldset id="first_radio_group">
+        <legend>First radio group</legend>  
+        <label for="first_a">first option
+            <input id="first_a" name="first_radio_selection" type="radio" value="first">
+        </label>
+        <br>
+        <label for="first_b">second option
+            <input id="first_b" name="first_radio_selection" type="radio" value="second">
+        </label>
+      </fieldset>
+
+      <fieldset id="second_radio_group">
+        <legend>Second radio group</legend> 
+        <label for="second_a">first option
+          <input id="second_a" name="second_radio_selection" type="radio" value="first">
+        </label>
+        <br>
+        <label for="second_b">second option
+          <input id="second_b" name="second_radio_selection" type="radio" value="second">
+        </label>
+      </fieldset>
+
+      <label for="first_pre_text">First text to insert
+          <input id="first_pre_text" name="first_pre_text" type="checkbox">
+      </label>
+      <br>
+
+      <label for="second_pre_text">Second text to insert
+          <input id="second_pre_text" name="second_pre_text" type="checkbox">
+      </label>
+      <br>
+
+      <input value="Create Report" id="btnSubmit" onclick="create_report()" type="button">
+      <br>
+    </div>
+    <br>
+    <br>
+    
+    <div id="div_out">
+      <h2>Generated Report</h2>
+      <table>
+        <tr>
+            <td>
+                <textarea rows="8" cols="28" name="first_text_area_b" id="first_text_area_b"></textarea>
+            </td>
+            <td>
+            </td>
+        </tr>
+
+        <tr>
+            <td>first field...</td>
+            <td id="first_input_field_b"></td>
+        </tr>
+
+        <tr>
+            <td>first radio selected...</td>
+            <td id="first_radio_selection_b"></td>
+        </tr>
+
+        <tr>
+            <td>second radio selected...</td>
+            <td id="second_radio_selection_b"></td>
+        </tr>
+
+        <tr>
+            <td>first pre text...</td>
+            <td id="first_pre_text_b"></td>
+        </tr>
+
+        <tr>
+            <td>second pre text...</td>
+            <td id="second_pre_text_b"></td>
+        </tr>
+      </table>
+    </div>
+    <br>
+
+    <img src="http://www.w3.org/Icons/valid-html401-blue" alt="Valid HTML 4.01">
+    <br>
+    <br>
+  </body>
+</html>
