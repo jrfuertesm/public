@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Show one div of many</title>
+    <style>
+        div {border: 1px solid black}
+		img {float: right; display: block; max-width: 10%;}
+    </style>
+  </head>
+
+  <body>
+    <div id="first_div">This is the first div</div>
+    <div id="second_div">This is the second div</div>
+    <div id="third_div">This is the third div</div>
+    <button id="show_first_div_btn">show first div</button>
+    <button id="show_second_div_btn">show second div</button>
+    <button id="show_third_div_btn">show third div</button>
+
+    <script>
+        const target_first_div = document.getElementById("first_div")
+        const target_second_div = document.getElementById("second_div")
+        const target_third_div = document.getElementById("third_div")
+
+        const show_first_div_btn = document.getElementById("show_first_div_btn")
+        const show_second_div_btn = document.getElementById("show_second_div_btn")
+        const show_third_div_btn = document.getElementById("show_third_div_btn")
+
+        show_first_div_btn.onclick = function () {
+          if (target_first_div.style.display !== "none") {
+            target_first_div.style.display = "block"
+            target_second_div.style.display = "none"
+            target_third_div.style.display = "none"
+          } else {
+            target_first_div.style.display = "block"
+            target_second_div.style.display = "none"
+            target_third_div.style.display = "none"
+          }
+        }
+        show_second_div_btn.onclick = function () {
+          if (target_second_div.style.display !== "none") {
+            target_first_div.style.display = "none"
+            target_second_div.style.display = "block"
+            target_third_div.style.display = "none"
+          } else {
+            target_first_div.style.display = "none"
+            target_second_div.style.display = "block"
+            target_third_div.style.display = "none"
+          }
+        }
+        show_third_div_btn.onclick = function () {
+          if (target_third_div.style.display !== "none") {
+            target_first_div.style.display = "none"
+            target_second_div.style.display = "none"
+            target_third_div.style.display = "block"
+          } else {
+            target_first_div.style.display = "none"
+            target_second_div.style.display = "none"
+            target_third_div.style.display = "block"
+          }
+        }
+    </script>
+	
+    <img src="http://www.w3.org/Icons/valid-html401-blue" alt="Valid HTML 4.01">
+    <br>
+    <br>
+  </body>
+
+</html>
